@@ -9,8 +9,8 @@ class Funcionario{
     salario: number;
     email: string;
     telefone: string;
-    endereço: string;
-    constructor(nome: string, cpf: string, idade: number,genero: string, cargo: string,  departamento: string,salario: number, email: string, telefone: string,endereço: string){
+    endereco: string;
+    constructor(nome: string, cpf: string, idade: number,genero: string, cargo: string,  departamento: string,salario: number, email: string, telefone: string,endereco: string){
         this.nome = nome,
         this.cpf = cpf,
         this.idade = idade,
@@ -20,8 +20,7 @@ class Funcionario{
         this.salario = salario,
         this.email = email,
         this.telefone = telefone
-        this.endereço = endereço
-
+        this.endereco = endereco 
     }
 }
 
@@ -34,19 +33,19 @@ const funcionario = new Funcionario('Daniel','12345678901',25,'M','medico','clin
     dataDeNascimento: Date;
     genero:string
     cpf: string;
-    endereço: string;
+    endereco: string;
     telefone: number;
     email: string;
     historicomedico: string;
     alergias: string;
     problemasdesaude: string;
     medicamentosatuais: string;
-    constructor(nome: string, dataDeNascimento: Date, genero: string, cpf: string, endereço: string, telefone: number, email: string, historicomedico: string, alergias: string, problemasdesaude: string, medicamentosatuais: string){
+    constructor(nome: string, dataDeNascimento: Date, genero: string, cpf: string, endereco: string, telefone: number, email: string, historicomedico: string, alergias: string, problemasdesaude: string, medicamentosatuais: string){
         this.nome = nome,
         this.dataDeNascimento = dataDeNascimento,
         this.genero = genero,
         this.cpf = cpf,
-        this.endereço = endereço,
+        this.endereco = endereco,
         this.telefone = telefone,
         this.email = email,
         this.historicomedico = historicomedico
