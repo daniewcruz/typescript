@@ -99,27 +99,27 @@ class Consultas {
     paciente: Paciente
     local: string
     dataHora: Date
-    statusdaconsulta: string
+    statusConsulta: string
     diagnostico: string
-    constructor(exame: string, medico: Funcionario, paciente: Paciente, local: string, dataHora: Date, statusdaconsulta: string, diagnostico: string) {
+    constructor(exame: string, medico: Funcionario, paciente: Paciente, local: string, dataHora: Date, statusConsulta: string, diagnostico: string) {
         this.exame = exame,
         this.medico = medico,
-        this.paciente = paciente,
+        this.paciente = paciente
         this.local = local,
         this.dataHora = dataHora
-        this.statusdaconsulta = statusdaconsulta
+        this.statusConsulta = statusConsulta
         this.diagnostico = diagnostico
     }
-    mostardados(){
-        console.log(`Consultas__:`)
-        console.log(`Exame______: ${this.exame}`)
-        console.log(`Médico_____: ${this.medico}`)
-        console.log(`Paciente___: ${this.paciente}`)
-        console.log(`Local______: ${this.exame}`)
-        console.log(`Data e hora: ${this.exame}`)
-        console.log(`Exame: ${this.exame}`)
-        console.log(`Exame: ${this.exame}`)
-        
+    mostrarDados(){
+        console.log(`Consultas_________:`)
+        console.log(`Exame_____________: ${this.exame}`)
+        console.log(`Médico____________: ${this.medico}`)
+        console.log(`Paciente__________: ${this.paciente}`)
+        console.log(`Local_____________: ${this.local}`)
+        console.log(`Data e hora_______: ${this.dataHora}`)
+        console.log(`Status da Consulta: ${this.statusConsulta}`)
+        console.log(`Diagnostico_______: ${this.diagnostico}`)
+       
 
         
 
@@ -128,4 +128,4 @@ class Consultas {
 
 const consultas = new Consultas('sangue', funcionario, paciente, 'senac zona norte', new Date('2024,2,20T8:30:30'), 'confirmado', 'gripe')
 
-//console.log(consultas)
+console.log(consultas.mostrarDados()
