@@ -1,4 +1,5 @@
 "use strict";
+//2 - Desenvolvimento de Sistema de Gestão de Biblioteca para a Biblioteca Leitura Certa
 class Livro {
     titulo;
     autor;
@@ -17,6 +18,8 @@ class Livro {
         this.quantidadeDeCopias = quantidadeDeCopias;
     }
 }
+const livro = new Livro("Título do Livro", "Autor do Livro", new Date(), "Categoria do Livro", "Editora do Livro", true, 100);
+console.log(livro);
 class Usuario {
     nome;
     idade;
@@ -33,6 +36,7 @@ class Usuario {
         this.historicoDeDevolucao = historicoDeDevolucao;
     }
 }
+const usuario = new Usuario("Nome do Usuário", 30, 123456789, "Endereço do Usuário", "Histórico de Empréstimo", "Histórico de Devolução");
 class Emprestimos {
     emprestimoRealizados;
     dataEmprestimo;
@@ -47,3 +51,19 @@ class Emprestimos {
         this.infoLivro = infoLivro;
     }
 }
+const emprestimo = new Emprestimos(1, new Date(), new Date(), usuario, livro);
+class Devolucao {
+    inforUsuario;
+    infoLivro;
+    dataEHora;
+    condicaoDoLivro;
+    multa;
+    constructor(inforUsuario, infoLivro, dataEHora, condicaoDoLivro, multa) {
+        this.inforUsuario = inforUsuario,
+            this.infoLivro = infoLivro,
+            this.dataEHora = dataEHora,
+            this.condicaoDoLivro = condicaoDoLivro;
+        this.multa = multa;
+    }
+}
+const devolucao = new Devolucao(usuario, livro, new Date(), "Boa", "Nenhuma");

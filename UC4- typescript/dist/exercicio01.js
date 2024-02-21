@@ -1,61 +1,116 @@
 "use strict";
+//1 - Desenvolvimento de Sistema de Cadastro para o Hospital Chega Doente Sai Bom
 class Funcionario {
     nome;
-    idade;
     cpf;
+    dataDeNascimento;
+    genero;
     cargo;
-    salario;
     departamento;
-    endereco;
+    salario;
     email;
     telefone;
-    genero;
-    constructor(nome, idade, cpf, cargo, salario, departamento, endereco, email, telefone, genero) {
-        this.nome = nome;
-        this.idade = idade;
-        this.cpf = cpf;
-        this.cargo = cargo;
-        this.salario = salario;
-        this.departamento = departamento;
+    endereco;
+    //metodo construtor da classe Funcionario
+    constructor(nome, cpf, dataDeNascimento, genero, cargo, departamento, salario, email, telefone, endereco) {
+        this.nome = nome,
+            this.cpf = cpf,
+            this.dataDeNascimento = dataDeNascimento,
+            this.genero = genero,
+            this.cargo = cargo,
+            this.departamento = departamento,
+            this.salario = salario,
+            this.email = email,
+            this.telefone = telefone;
         this.endereco = endereco;
-        this.email = email;
-        this.telefone = telefone;
-        this.genero = genero;
+    }
+    mostrarDados() {
+        console.log('dados do funcionario:');
+        console.log(`nome______________: ${this.nome}`);
+        console.log(`CPF_______________: ${this.cpf}`);
+        console.log(`Data de nascimento: ${this.dataDeNascimento.toLocaleDateString('pt-br')}`);
+        console.log(`genero____________: ${this.genero}`);
+        console.log(`cargo_____________: ${this.cargo}`);
+        console.log(`departamento______: ${this.departamento}`);
+        console.log(`salario___________: ${this.salario}`);
+        console.log(`Email_____________: ${this.email}`);
+        console.log(`Telefone__________: ${this.telefone}`);
+        console.log(`Endereço__________: ${this.endereco}`);
+        console.log(`-----------------------------------------------------------------------------------`);
     }
 }
-class Consulta {
-    local;
-    dataehorario;
-    medico;
-    informacaoPaciente;
-    exame;
-    resultado;
-    statusConsulta;
-    constructor(local, dataehorario, medico, informacaoPaciente, exame, resultado, statusConsulta) {
-        this.local = local;
-        this.dataehorario = dataehorario;
-        this.medico = medico;
-        this.informacaoPaciente = informacaoPaciente;
-        this.exame = exame;
-        this.resultado = resultado;
-        this.statusConsulta = statusConsulta;
-    }
-}
+const funcionario = new Funcionario('Daniel', '12345678901', new Date(2024, 2, 21), 'M', 'Médico', 'clinico geral', 5700, 'daniewcruz.gmail.com', '84994553966', 'rua araucaria');
+console.log(funcionario.mostrarDados());
 class Paciente {
     nome;
-    idade;
     dataDeNascimento;
+    genero;
     cpf;
     endereco;
-    contato;
-    sintomas;
-    constructor(nome, idade, dataDeNascimeto, cpf, endereco, contato, sintomas) {
-        this.nome = nome;
-        this.idade = idade;
-        this.dataDeNascimento = dataDeNascimeto;
-        this.cpf = cpf;
-        this.endereco = endereco;
-        this.contato = contato;
-        this.sintomas = sintomas;
+    telefone;
+    email;
+    historicoMedico;
+    alergias;
+    problemasDeSaude;
+    medicamentosAtuais;
+    constructor(nome, dataDeNascimento, genero, cpf, endereco, telefone, email, historicoMedico, alergias, problemasDeSaude, medicamentosAtuais) {
+        this.nome = nome,
+            this.dataDeNascimento = dataDeNascimento,
+            this.genero = genero,
+            this.cpf = cpf,
+            this.endereco = endereco,
+            this.telefone = telefone,
+            this.email = email,
+            this.historicoMedico = historicoMedico;
+        this.alergias = alergias,
+            this.problemasDeSaude = problemasDeSaude,
+            this.medicamentosAtuais = medicamentosAtuais;
+    }
+    mostrarDados() {
+        console.log(`Dados do paciente:`);
+        console.log(`Nome_______________: ${this.nome}`);
+        console.log(`Data de nascimento_: ${this.dataDeNascimento.toLocaleDateString('pt-br')}`);
+        console.log(`genero_____________: ${this.genero}`);
+        console.log(`CPF________________: ${this.cpf}`);
+        console.log(`Endereço___________: ${this.endereco}`);
+        console.log(`Telefone___________: ${this.telefone}`);
+        console.log(`Email______________: ${this.email}`);
+        console.log(`Histórico médico___: ${this.historicoMedico}`);
+        console.log(`Alergias___________: ${this.alergias}`);
+        console.log(`Problemas de saúde_: ${this.problemasDeSaude}`);
+        console.log(`Medicamentos atuais: ${this.medicamentosAtuais}`);
+        console.log(`----------------------------------------------------------------------------`);
     }
 }
+const paciente = new Paciente('fabricio', new Date('1995-8-25'), 'M', '003272887680', 'alto da torre', 8496195808, 'fabricioagiota@gmail.com', 'calazar', 'agua', 'artrite', 'dipirona');
+console.log(paciente.mostrarDados());
+class Consultas {
+    exame;
+    medico;
+    paciente;
+    local;
+    dataHora;
+    statusdaconsulta;
+    diagnostico;
+    constructor(exame, medico, paciente, local, dataHora, statusdaconsulta, diagnostico) {
+        this.exame = exame,
+            this.medico = medico,
+            this.paciente = paciente,
+            this.local = local,
+            this.dataHora = dataHora;
+        this.statusdaconsulta = statusdaconsulta;
+        this.diagnostico = diagnostico;
+    }
+    mostardados() {
+        console.log(`Consultas__:`);
+        console.log(`Exame______: ${this.exame}`);
+        console.log(`Médico_____: ${this.medico}`);
+        console.log(`Paciente___: ${this.paciente}`);
+        console.log(`Local______: ${this.exame}`);
+        console.log(`Data e hora: ${this.exame}`);
+        console.log(`Exame: ${this.exame}`);
+        console.log(`Exame: ${this.exame}`);
+    }
+}
+const consultas = new Consultas('sangue', funcionario, paciente, 'senac zona norte', new Date('2024,2,20T8:30:30'), 'confirmado', 'gripe');
+//console.log(consultas)
