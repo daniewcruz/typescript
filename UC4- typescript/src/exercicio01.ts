@@ -24,14 +24,14 @@ class Pessoa{
         console.log(`Endereço__________: ${this.endereco}`)
         console.log(`Telefone__________: ${this.telefone}`)
         if (this.genero){
-            console.log(`Genero________: ${this.genero}`)
+            console.log(`Genero____________: ${this.genero}`)
         }
        
     }
 }
 
 
-class Funcionario extends Pessoa {
+export class Funcionario extends Pessoa {
     matricula: string
     cargo: string;
     departamento: string;
@@ -47,12 +47,12 @@ class Funcionario extends Pessoa {
     }
     
         mostrarDados(){
-            console.log(`------------Dados do funcionario-------------`)
+            
             super.mostrarDados()
             console.log(`Matricula_________: ${this.matricula} `)
             console.log(`Cargo_____________: ${this.cargo}`)
             console.log(`Departamento______: ${this.departamento}`)
-            console.log(`------------------------------------------------------------------------------------`)
+            
 
     }
 
@@ -83,7 +83,7 @@ class Paciente extends Pessoa{
         console.log(`Problemas de saúde__: ${this.problemasDeSaude}`)
         console.log(`Medicamentos atuais_: ${this.medicamentosAtuais}`)
         if (this.genero){
-            console.log(`Genero_____________: ${this.genero}`)
+            console.log(`Genero______________: ${this.genero}`)
         }
         console.log(`----------------------------------------------------------------------------`)
 
