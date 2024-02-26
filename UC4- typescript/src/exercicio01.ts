@@ -1,68 +1,53 @@
 //1 - Desenvolvimento de Sistema de Cadastro para o Hospital Chega Doente Sai Bom
-class Pessoa{
-    nome:string;
-    cpf: string;
-    dataDeNascimento: Date;
-    email: string;
-    endereco: string[];
-    telefone: string;
-    genero?: string;
-    constructor(nome:string, cpf: string,  dataDeNascimento: Date, email: string, endereco: string[], telefone: string, genero?: string){
-        this.nome = nome;
-        this.cpf = cpf;
-        this.dataDeNascimento = dataDeNascimento;
-        this.email = email;
-        this.endereco = endereco
-        this.telefone = telefone;
-        this.genero = genero;
-    }
-    mostrarDados(){
-        console.log(`Nome______________: ${this.nome}`)
-        console.log(`CPF_______________: ${this.cpf}`)
-        console.log(`Data de nascimento: ${this.dataDeNascimento.toLocaleDateString('pt-BR')}`)
-        console.log(`Email_____________: ${this.email}`)
-        console.log(`Endereço__________: ${this.endereco}`)
-        console.log(`Telefone__________: ${this.telefone}`)
-        if (this.genero){
-            console.log(`Genero____________: ${this.genero}`)
-        }
-       
-    }
+abstract class Pessoa {
+    
+    constructor(
+        public nome: string,
+        public cpf: string,
+        public dataDeNascimento: Date,
+        public email: string,
+        public endereco: string[],
+        public telefone: string,
+        public genero?: string
+    ) { }
+
+    mostrarDados() { }
+
 }
 
 
 export class Funcionario extends Pessoa {
     matricula: string
     cargo: string;
-    departamento: string;
-    
+    setor: string;
+
     //metodo construtor da classe Funcionario
-    constructor(nome: string, cpf: string, dataDeNascimento: Date, cargo: string, departamento: string, email: string, telefone: string, endereco: string[], matricula: string, genero?: string) {
-       super(nome, cpf, dataDeNascimento, email, endereco, telefone, genero);
-       this.matricula = matricula;
-       this.cargo = cargo;
-       this.departamento = departamento;
-       
+    constructor(nome: string, cpf: string, dataDeNascimento: Date, cargo: string, setor: string, email: string, telefone: string, endereco: string[], matricula: string, genero?: string) {
+        super(nome, cpf, dataDeNascimento, email, endereco, telefone, genero);
+        this.matricula = matricula;
+        this.cargo = cargo;
+        this.setor = setor;
+
 
     }
-    
-        mostrarDados(){
-            
-            super.mostrarDados()
-            console.log(`Matricula_________: ${this.matricula} `)
-            console.log(`Cargo_____________: ${this.cargo}`)
-            console.log(`Departamento______: ${this.departamento}`)
-            
+
+    mostrarDados() {
+
+        super.mostrarDados()
+        console.log(`Matricula_________: ${this.matricula} `)
+        console.log(`Cargo_____________: ${this.cargo}`)
+        console.log(`Setor_____________: ${this.setor}`)
+
 
     }
 
 }
 
-const funcionario = new Funcionario('Daniel', '12345678901', new Date('1999-01-08'),'Médico', 'pediatrico', 'daniewcruz@gmail.com', '84994553966',['rua araucaria','32','Potengi'],'123321', 'M')
+const funcionario = new Funcionario('Daniel', '12345678901', new Date('1999-01-08'), 'Médico', 'pediatrico', 'daniewcruz@gmail.com', '84994553966', ['rua araucaria', '32', 'Potengi'], '123321', 'M')
 
 funcionario.mostrarDados()
 
-class Paciente extends Pessoa{
+class Paciente extends Pessoa {
     historicoMedico: string;
     alergias: string;
     problemasDeSaude: string;
@@ -73,16 +58,22 @@ class Paciente extends Pessoa{
         this.alergias = alergias;
         this.problemasDeSaude = problemasDeSaude;
         this.medicamentosAtuais = medicamentosAtuais;
-        
+
     }
-    mostrarDados(){
+    mostrarDados() {
         console.log(`------------Dados do paciente------------`)
-        super.mostrarDados()
+        console.log(`Nome______________: ${this.nome}`)
+        console.log(`CPF_______________: ${this.cpf}`)
+        console.log(`Data de nascimento: ${this.dataDeNascimento.toLocaleDateString('pt-BR')}`)
+        console.log(`Email_____________: ${this.email}`)
+        console.log(`Endereço__________: ${this.endereco}`)
+        console.log(`Telefone__________: ${this.telefone}`)
+
         console.log(`Histórico médico____: ${this.historicoMedico}`)
         console.log(`Alergias____________: ${this.alergias}`)
         console.log(`Problemas de saúde__: ${this.problemasDeSaude}`)
         console.log(`Medicamentos atuais_: ${this.medicamentosAtuais}`)
-        if (this.genero){
+        if (this.genero) {
             console.log(`Genero______________: ${this.genero}`)
         }
         console.log(`----------------------------------------------------------------------------`)
@@ -105,14 +96,14 @@ class Consultas {
     diagnostico: string
     constructor(exame: string, medico: Funcionario, paciente: Paciente, local: string, dataHora: Date, statusConsulta: string, diagnostico: string) {
         this.exame = exame,
-        this.medico = medico,
-        this.paciente = paciente
+            this.medico = medico,
+            this.paciente = paciente
         this.local = local,
-        this.dataHora = dataHora
+            this.dataHora = dataHora
         this.statusConsulta = statusConsulta
         this.diagnostico = diagnostico
     }
-    mostrarDados(){
+    mostrarDados() {
         console.log(`------------Consultas------------`)
         console.log(`Exame_____________: ${this.exame}`)
         console.log(`Médico____________: ${this.medico.nome}`)
@@ -121,9 +112,9 @@ class Consultas {
         console.log(`Data e hora_______: ${this.dataHora.toLocaleDateString('pt-BR')} - ${this.dataHora.toTimeString()}`)
         console.log(`Status da Consulta: ${this.statusConsulta}`)
         console.log(`Diagnostico_______: ${this.diagnostico}`)
-       
 
-        
+
+
 
     }
 }
