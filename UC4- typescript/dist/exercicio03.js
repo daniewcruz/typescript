@@ -1,18 +1,20 @@
 "use strict";
-//3 - Desenvolvimento de Sistema de Gerenciamento de Finanças Pessoais para o Banco Dinheiro Seguro
+/* //3 - Desenvolvimento de Sistema de Gerenciamento de Finanças Pessoais para o Banco Dinheiro Seguro
+
 class Cliente {
-    nome;
-    idade;
-    cpf;
-    endereco;
-    telefone;
-    email;
-    genero;
-    metas;
-    historicoConta;
-    hisoricoDespesas;
-    historicoReceitas;
-    constructor(nome, idade, cpf, endereco, telefone, email, genero, metas, historicoConta, historicoDespesas, historicoReceitas) {
+    nome: string;
+    idade: string;
+    cpf: string;
+    endereco: string;
+    telefone: number;
+    email: string;
+    genero: string;
+    metas: string;
+    historicoConta: Contas;
+    hisoricoDespesas: Despesas
+    historicoReceitas: Receitas;
+
+    constructor(nome: string, idade: string, cpf: string, endereco: string, telefone: number, email: string, genero: string, metas: string, historicoConta: Contas, historicoDespesas: Despesas, historicoReceitas: Receitas){
         this.nome = nome;
         this.idade = idade;
         this.cpf = cpf;
@@ -22,51 +24,66 @@ class Cliente {
         this.genero = genero;
         this.metas = metas;
         this.historicoConta = historicoConta;
-        this.hisoricoDespesas = historicoDespesas;
-        this.historicoReceitas = historicoReceitas;
+        this.hisoricoDespesas = historicoDespesas
+        this.historicoReceitas= historicoReceitas;
+
     }
 }
+
 class Contas {
-    saldo;
-    tipoConta;
-    titularidade;
-    transacoes;
-    constructor(saldo, tipoConta, titularidade, transacoes) {
+    saldo: number;
+    tipoConta: string;
+    titularidade: Cliente;
+    transacoes: string;
+
+    constructor(saldo: number, tipoConta: string, titularidade: Cliente, transacoes: string) {
         this.saldo = saldo;
         this.tipoConta = tipoConta;
         this.titularidade = titularidade;
         this.transacoes = transacoes;
+
     }
 }
+
+
+
 class Despesas {
-    despesas;
-    dataDaTransacao;
-    categoria;
-    status;
-    metodoPagamento;
-    beneficiario;
-    constructor(despesas, dataDaTransacao, categoria, status, metodoPagamento, beneficiario) {
+    despesas: number;
+    dataDaTransacao: Date;
+    categoria: string;
+    status: string;
+    metodoPagamento: string
+    beneficiario: string
+
+    constructor( despesas: number,dataDaTransacao: Date,categoria: string, status: string, metodoPagamento: string,  beneficiario: string) {
         this.despesas = despesas,
-            this.dataDaTransacao = dataDaTransacao,
-            this.categoria = categoria,
-            this.status = status;
-        this.metodoPagamento = metodoPagamento;
-        this.beneficiario = beneficiario;
+        this.dataDaTransacao = dataDaTransacao,
+        this.categoria = categoria,
+        this.status = status
+        this.metodoPagamento = metodoPagamento
+        this.beneficiario = beneficiario
+
     }
 }
-class Receitas {
-    valor;
-    dataDaTransacao;
-    categoria;
-    status;
-    metodoRecebimento;
-    contaDestino;
-    constructor(valor, dataDaTransacao, categoria, status, metodoRecebimento, contaDestino) {
+
+
+
+class Receitas{
+    valor: number
+    dataDaTransacao: Date;
+    categoria: string;
+    status: string;
+    metodoRecebimento: string;
+    contaDestino: string;
+
+    constructor( valor: number, dataDaTransacao: Date, categoria: string, status: string, metodoRecebimento: string, contaDestino: string){
         this.valor = valor,
-            this.dataDaTransacao = dataDaTransacao,
-            this.categoria = categoria,
-            this.status = status,
-            this.metodoRecebimento = metodoRecebimento,
-            this.contaDestino = contaDestino;
+        this.dataDaTransacao = dataDaTransacao,
+        this.categoria = categoria,
+        this.status = status,
+        this.metodoRecebimento = metodoRecebimento,
+        this.contaDestino = contaDestino
+
     }
-}
+    
+} */ 
